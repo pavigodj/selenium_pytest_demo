@@ -1,7 +1,5 @@
 from Utility.Baseclass import BaseClass
-from PageObjects.cameraPage import CameraPage
-from PageObjects.HomePage import HomePage
-
+from page_objects.HomePage import HomePage
 
 class Test_CameraPage(BaseClass):
 

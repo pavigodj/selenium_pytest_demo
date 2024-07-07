@@ -1,6 +1,6 @@
 from Utility.Baseclass import BaseClass
 from selenium.webdriver.common.by import By
-from PageObjects.HomePage import HomePage
+from page_objects.HomePage import HomePage
 import pytest
 import re
 import logging

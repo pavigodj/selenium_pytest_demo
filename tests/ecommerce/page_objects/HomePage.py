@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from PageObjects.cameraPage import CameraPage
+from .cameraPage import CameraPage
 
 class HomePage:
 
