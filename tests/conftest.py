@@ -10,7 +10,9 @@ def pytest_addoption(parser):
 @pytest.fixture(scope="class")
 def driverSetUp(request):
     browserName = request.config.getoption("browser")
+    print(browserName)
     if browserName == "firefox":
+
         options_obj = webdriver.FirefoxOptions()
         #certfication error handling, maximizing screen, making browser headless
         options_obj.add_argument("--ignore-certification-errors")
@@ -25,7 +27,6 @@ def driverSetUp(request):
     request.cls.driver = driver
     driver.get("https://opencart.abstracta.us/")
     driver.maximize_window()
-    # driver.find_element(By.)
     yield
     driver.quit()
 
