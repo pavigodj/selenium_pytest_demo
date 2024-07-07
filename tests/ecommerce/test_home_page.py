@@ -15,12 +15,12 @@ class Test_HomePage(BaseClass):
     @pytest.mark.smoke
     def test_windowTitleName(self):
         actualTitle = self.driver.title
-        logger.info("test_windowtitleName")
+        logger.info("'Your Store' as")
         assert actualTitle == "Your Store", "Title doesnt match"
 
     def test_PageTitle(self):
         result_txt = self.homePage.homePageTitle().text
-        logger.info("test_PageTitle")
+        logger.info("Title displayed on Home Page ")
         assert result_txt == "Your Store", "Home Page Headline not matching"
 
     def test_verify_search(self):
@@ -28,7 +28,7 @@ class Test_HomePage(BaseClass):
         assert searchlink.is_displayed()
         assert searchlink.is_enabled()
 
-
+    @pytest.mark.regression
     @pytest.mark.smoke
     def test_verify_containers(self):
         self.homePage.containers()

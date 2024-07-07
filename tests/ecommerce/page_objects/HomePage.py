@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from .cameraPage import CameraPage
+from page_objects.productPage import ProductPage
 
 class HomePage:
 
@@ -8,6 +8,11 @@ class HomePage:
 
     homePage = (By.XPATH, "//a[text()='Your Store']")
     camera = (By.XPATH,"//a[text()='Cameras']")
+    # statically defined
+    product_xpath ={"camera":(By.XPATH,"//a[text()='Cameras']"),
+                    "desktop":(By.XPATH,"//a[text()='Desktops']"),
+                    "phones":(By.XPATH,"//a[text()='Phones & PDAs']")}
+    
     searchbar = (By.XPATH,"//div[@class= 'col-sm-5']")
     menuBar_locator = (By.XPATH,"//ul[@class= 'nav navbar-nav']/li")
     featuredLocator = (By.XPATH,"//h3")
@@ -30,9 +35,9 @@ class HomePage:
     def feature(self):
         return self.driver.find_element(*HomePage.featuredLocator)
     
-    def cameraClick(self):
-        self.driver.find_element(*HomePage.camera).click()
-        return CameraPage(self.driver)
+    def productClick(self,prodName):
+        self.driver.find_element(*HomePage.product_xpath[prodName]).click()
+        return ProductPage(self.driver)
     
     def cartButton(self):
         return self.driver.find_element(*HomePage.cartButtonLocator)
