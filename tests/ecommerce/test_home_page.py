@@ -1,11 +1,10 @@
-from Utility.Baseclass import BaseClass
+from tests.ecommerce.Utility.Baseclass import BaseClass
 from selenium.webdriver.common.by import By
-from page_objects.HomePage import HomePage
+from tests.ecommerce.page_objects.homePage import HomePage
 import pytest
 import re
 import logging
 logger = logging.getLogger(__name__)
-
 class Test_HomePage(BaseClass):
 #creating homePage object once for each testcases in setUp method
     @pytest.fixture(autouse=True)
@@ -66,3 +65,6 @@ class Test_HomePage(BaseClass):
     #     actualTitle = self.driver.title
     #     assert "OpenCart" in actualTitle, "Title doesnt match"
 
+@pytest.fixture(scope="class", autouse=True)
+def getUrl(driverSetUp):
+    driverSetUp.get("https://opencart.abstracta.us/")

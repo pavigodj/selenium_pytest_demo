@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
-from page_objects.productPage import ProductPage
+from tests.ecommerce.page_objects.productPage import ProductPage
+from tests.ecommerce.page_objects.checkout.checkoutPage import CheckOutPage
 
 class HomePage:
 
@@ -19,6 +20,7 @@ class HomePage:
     containerTab = (By.XPATH,"//div[@id ='top-links']/ul/li")
     cartButtonLocator = (By.XPATH,"//button[@class='btn btn-inverse btn-block btn-lg dropdown-toggle']")
     emptycartClickLocator = (By.XPATH,'//ul[@class="dropdown-menu pull-right"]/li')
+    checkout_locator = (By.XPATH, "//strong/i[@class='fa fa-share']")
 
     def homePageTitle(self):
         return self.driver.find_element(*HomePage.homePage)
@@ -41,6 +43,15 @@ class HomePage:
     
     def cartButton(self):
         return self.driver.find_element(*HomePage.cartButtonLocator)
+
+    def checkoutButton(self):
+        return self.driver.find_element(*HomePage.checkout_locator)
+        
+    def doCheckout(self):
+        self.checkoutButton().click()
+        return CheckOutPage(self.driver)
+
+
 
 
 
