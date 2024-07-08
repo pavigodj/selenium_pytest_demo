@@ -1,4 +1,4 @@
-import tests.ecommerce.page_objects.checkout.checkoutPagelocators as checkoutPagelocators
+import ecommerce.page_objects.checkout.checkoutPagelocators as checkoutPagelocators
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.by import By
 

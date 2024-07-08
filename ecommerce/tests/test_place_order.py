@@ -1,9 +1,9 @@
 import backoff
 from selenium.common.exceptions import TimeoutException
-from tests.ecommerce.Utility.Baseclass import BaseClass
-from tests.ecommerce.page_objects.homePage import HomePage
-from tests.ecommerce.page_objects.productDetailsPage import ProductDetails
-from tests.ecommerce.page_objects.checkout.checkoutPage import CheckOutPage, AddressSubPage
+from ecommerce.Utility.Baseclass import BaseClass
+from ecommerce.page_objects.homePage import HomePage
+from ecommerce.page_objects.productDetailsPage import ProductDetails
+from ecommerce.page_objects.checkout.checkoutPage import CheckOutPage, AddressSubPage
 import random
 import pytest
 import logging
@@ -138,8 +138,3 @@ def click_cart(obj: Test_PlaceOrder):  # Retry mechanism
 @pytest.fixture(scope="class", autouse=True)
 def getUrl(driverSetUp):
     driverSetUp.get("https://opencart.abstracta.us/")
-        
-
-
-
-

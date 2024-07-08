@@ -1,9 +1,9 @@
 import time
 import pytest
-from tests.ecommerce.Utility.Baseclass import BaseClass
+from ecommerce.Utility.Baseclass import BaseClass
 from selenium.webdriver.common.by import By
 import random
-from tests.ecommerce.page_objects.checkout.checkoutPage import CheckOutPage, AddressSubPage
+from ecommerce.page_objects.checkout.checkoutPage import CheckOutPage, AddressSubPage
 import logging
 logger = logging.getLogger(__name__)
 
@@ -97,4 +97,3 @@ class Test_CheckOutPage(BaseClass):
         assert self.checkoutaddrSubPage.postalcodeEntry == '97631'
         assert self.checkoutaddrSubPage.countryEntry == 'United States'  
         assert self.checkoutaddrSubPage.stateEntry == 'California'
-
