@@ -50,8 +50,6 @@ class CheckOutPage_Manager(BaseClass):
         with subtests.test(msg='step6'):
             ''' '''
             self.verifyElementClickable(self.checkOutPageObj.confirm_order.confirm_bttn_locator)
-            import pdb
-            pdb.set_trace()
             self.checkOutPageObj.continueClick(self.checkOutPageObj.confirm_order.confirm_bttn_locator).click()
 
         self.verifyElementPresence(self.checkOutPageObj.confirm_order.confirm_order_locator)
