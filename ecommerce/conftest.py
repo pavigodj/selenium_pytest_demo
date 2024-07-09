@@ -23,9 +23,10 @@ def driverSetUp(request):
         options_obj.add_argument('--headless=new')
         #certfication error handling, maximizing screen, making browser headless
         options_obj.add_argument("--ignore-certification-errors")
-        driver = webdriver.Chrome(options=options_obj)                                  
-    request.cls.driver = driver
+        driver = webdriver.Chrome(options=options_obj)
     # driver.get("https://opencart.abstracta.us/")
+    if request.cls:  # Skip for testcase which is not a class
+        request.cls.driver = driver
     driver.maximize_window()
     yield driver
     driver.quit()

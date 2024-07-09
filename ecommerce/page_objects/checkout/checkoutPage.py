@@ -1,4 +1,6 @@
 import ecommerce.page_objects.checkout.checkoutPagelocators as checkoutPagelocators
+from selenium.webdriver.support import  expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.by import By
 
@@ -11,6 +13,9 @@ class CheckOutPage:
         self.payment_method = checkoutPagelocators.PaymentMethodLocators()
         self.confirm_order = checkoutPagelocators.ConfirmOrderLocators()
 
+    def confirm_order_txt(self):
+        return self.driver.find_element(*self.confirm_order.confirm_order_locator)
+    
     def checkoutName(self):
         return self.driver.find_element(*self.checkout_options.checkoutName_locator)
     
@@ -59,10 +64,10 @@ class CheckOutPage:
 
     def continueClick(self, locator=None):
         if locator:
+            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(locator))
             return self.driver.find_element(*locator)
         else:
             return self.driver.find_element(*self.checkout_options.continue_bttn_locator)
-
         
 
 class AddressSubPage:

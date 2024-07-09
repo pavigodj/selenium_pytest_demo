@@ -16,7 +16,10 @@ class ProductDetails:
     
     def quantity(self):
         return self.driver.find_element(*ProductDetails.quantity_locator)
-    
+
+    def addtoCartButton(self):
+        return self.driver.find_element(*ProductDetails.addTocart_locator)
+
     def addtoCart(self):
         self.driver.find_element(*ProductDetails.addTocart_locator).click()
 

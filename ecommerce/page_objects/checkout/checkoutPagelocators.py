@@ -55,6 +55,8 @@ class PaymentMethodLocators:
 
 class ConfirmOrderLocators:
     confirm_bttn_locator = (By.XPATH,"//input[@id='button-confirm']")
+    confirm_order_locator = (By.XPATH,"//div[@id='content']/h1")
+
     #table content locators
 
 
