@@ -1,0 +1,21 @@
+- camera:
+    - color: Red
+      name: Canon EOS 5D
+      quantity: 2
+    - color: Blue
+      name: Canon EOS 5D
+      quantity: 5
+    - name: Nikon D300
+      quantity: 7
+  phone:
+    - name: iPhone
+      quantity: 2
+    - name: HTC Touch HD
+      quantity: 6
+  tablet:
+    - name: Samsung Galaxy Tab 10.1
+      quantity: 9
+- camera:
+    - color: Red
+      name: Canon EOS 5D
+      quantity: 2

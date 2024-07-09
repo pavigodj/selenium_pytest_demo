@@ -12,7 +12,9 @@ class HomePage:
     # statically defined
     product_xpath ={"camera":(By.XPATH,"//a[text()='Cameras']"),
                     "desktop":(By.XPATH,"//a[text()='Desktops']"),
-                    "phones":(By.XPATH,"//a[text()='Phones & PDAs']")}
+                    "tablet":(By.XPATH,"//a[text()='Tablets']"),
+                    "laptop":(By.XPATH,"//a[text()='Laptops & Notebooks']"),
+                    "phone":(By.XPATH,"//a[text()='Phones & PDAs']")}
     
     searchbar = (By.XPATH,"//div[@class= 'col-sm-5']")
     menuBar_locator = (By.XPATH,"//ul[@class= 'nav navbar-nav']/li")
@@ -21,6 +23,11 @@ class HomePage:
     cartButtonLocator = (By.XPATH,"//button[@class='btn btn-inverse btn-block btn-lg dropdown-toggle']")
     emptycartClickLocator = (By.XPATH,'//ul[@class="dropdown-menu pull-right"]/li')
     checkout_locator = (By.XPATH, "//strong/i[@class='fa fa-share']")
+    home_locator = (By.XPATH,"//div[@class= 'col-sm-4']")
+
+    def goHome(self):
+        self.driver.get("http://opencart.abstracta.us:80/index.php?route=common/home")
+        # self.driver.find_element(*HomePage.homePage.home_locator).click() TODO
 
     def homePageTitle(self):
         return self.driver.find_element(*HomePage.homePage)

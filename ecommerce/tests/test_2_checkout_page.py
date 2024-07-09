@@ -1,4 +1,3 @@
-# import time
 import pytest
 from ecommerce.Utility.Baseclass import BaseClass
 from selenium.webdriver.common.by import By
@@ -30,32 +29,32 @@ class CheckOutPage_Manager(BaseClass):
 
     def perform_checkout_process(self, subtests, user_type):
         '''To test complete flow of checkout of a product selected '''
-        with subtests.test(msg='step1'):
+        with subtests.test(msg='checkout step1'):
             ''' To select the user type (guest/returning users) '''
             self.perform_checkout_option(user_type)  # step1
 
         for id, addr_type in enumerate(['billing', 'delivery']):  # step 2 and 3
-            with subtests.test(msg=f'step{id+2}'):
+            with subtests.test(msg=f'checkout step{id+2}'):
                 ''' For verifying billing details and delivery details '''
                 self.perform_checkout_address_details(addr_type, user_type)
 
-        with subtests.test(msg='step4'):
+        with subtests.test(msg='checkout step4'):
             ''' For verifying Delivery method selection'''
             self.checkOutPageObj.continueClick(self.checkOutPageObj.delivery_method.continue_bttn_locator).click()
 
-        with subtests.test(msg='step5'):
+        with subtests.test(msg='checkout step5'):
             ''' For verifying Payment method selection '''
+            self.verifyElementClickable(self.checkOutPageObj.payment_method.agree_checkbox_locator)
             self.checkOutPageObj.agree_terms().click()
             self.checkOutPageObj.continueClick(self.checkOutPageObj.payment_method.continue_bttn_locator).click()
-        with subtests.test(msg='step6'):
+        with subtests.test(msg='checkout step6'):
             ''' '''
             self.verifyElementClickable(self.checkOutPageObj.confirm_order.confirm_bttn_locator)
             self.checkOutPageObj.continueClick(self.checkOutPageObj.confirm_order.confirm_bttn_locator).click()
-
         self.verifyElementPresence(self.checkOutPageObj.confirm_order.confirm_order_locator)
         orderTxt = self.checkOutPageObj.confirm_order_txt().text
         logger.info(orderTxt)
-        print(f'\n***\t{orderTxt}\t***')
+        print(f'\n***\t{orderTxt}\t***', end='')
         assert orderTxt == "Your order has been placed!"
 
     def perform_checkout_option(self, user_type):

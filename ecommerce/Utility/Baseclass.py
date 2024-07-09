@@ -18,11 +18,11 @@ class BaseClass():
         return sel.first_selected_option.text
     
     def verifyElementVisiblity(self,locator):
-        WebDriverWait(self.driver, 12).until(
+        WebDriverWait(self.driver, 20).until(
             EC.visibility_of_element_located(locator))
          
     def verifyElementPresence(self,locator):
-        WebDriverWait(self.driver, 14).until(
+        WebDriverWait(self.driver, 15).until(
             EC.presence_of_element_located(locator))
         
     def verifyElementClickable(self,locator):

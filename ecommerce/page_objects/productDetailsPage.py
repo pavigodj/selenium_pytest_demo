@@ -4,7 +4,7 @@ class ProductDetails:
 
     def __init__(self,driver):
         self.driver = driver
-    
+    delivery_date = (By.XPATH, "//*[@id='input-option225']")
     optionsDropdown = (By.XPATH, "//select[@id='input-option226']")
     quantity_locator = (By.XPATH,"//input[@id='input-quantity']")
     addTocart_locator = (By.XPATH,"//button[@id='button-cart']")
