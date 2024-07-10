@@ -6,13 +6,13 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 
 def pytest_addoption(parser):
     parser.addoption(
-        "--browser", action="store", default="firefox", help="my option: chrome or firefox"
+        "--browser_name", action="store", default="firefox", help="my option: chrome or firefox"
     )
 
 @pytest.fixture(scope="class")
 def driverSetUp(request):
     # Setup
-    browserName = request.config.getoption("browser")
+    browserName = request.config.getoption("browser_name")
     if browserName == "firefox":
         options_obj = webdriver.FirefoxOptions()
         #certfication error handling, maximizing screen, making browser headless
