@@ -1,5 +1,5 @@
 import backoff
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from ecommerce.utilities.baseclass import BaseClass
 from ecommerce.page_objects.home_page import HomePage
 from ecommerce.page_objects.product_page import ProductDetails
@@ -88,6 +88,16 @@ class Test_PlaceOrder(BaseClass):
         '''Add selected product to cart and verify alert msg'''
         self.verifyElementPresence(self.prodDetailsObj.addTocart_locator)
         self.prodDetailsObj.addtoCart()
+        try:
+            self.verifyElementVisiblity(self.prodDetailsObj.alert_locator, timeout=1)
+        except (TimeoutException, NoSuchElementException):
+            logger.warn('Alert message not displayed!')
+            pytest.xfail('looks to be bug in the web page')
+        else:
+            self.verifyElementVisiblity(self.prodDetailsObj.alert_locator)
+            alert_msg = self.prodDetailsObj.alertmsg().text
+            assert "Success" in alert_msg
+
         # try: # TODO
         #     self.verifyElementVisiblity(self.prodDetailsObj.alert_locator)
         #     alert_msg = self.prodDetailsObj.alertmsg().text

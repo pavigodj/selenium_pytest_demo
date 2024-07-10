@@ -22,16 +22,15 @@ def driverSetUp(request):
     elif browserName == "edge":
         options_obj = webdriver.EdgeOptions()
         options_obj.add_argument("--ignore-certificate-errors")
+        options_obj.add_argument("--guest")
         service_obj = EdgeService("/Users/bavi/Downloads/msedgedriver")
         driver = webdriver.Edge(service=service_obj, options=options_obj)        
     elif browserName == "chrome":
         chromedriver_path = "/Users/bavi/Downloads/chromedriver"
-        service = ChromeService(chromedriver_path)
         options_obj = webdriver.ChromeOptions()
         options_obj.add_argument("--ignore-certificate-errors")
-        options_obj.add_argument("chrome.switches")
-        options_obj.add_argument("--disable-extensions")
-        options_obj.add_argument("disable-infobars")
+        options_obj.add_argument("--guest")
+        service = ChromeService(chromedriver_path)
         driver = webdriver.Chrome(service=service, options=options_obj)
     if request.cls:  # Skip for testcase which is not a class
         request.cls.driver = driver

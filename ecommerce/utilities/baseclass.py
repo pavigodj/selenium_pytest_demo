@@ -17,8 +17,8 @@ class BaseClass():
         sel.select_by_visible_text(text)
         return sel.first_selected_option.text
     
-    def verifyElementVisiblity(self,locator):
-        WebDriverWait(self.driver, 20).until(
+    def verifyElementVisiblity(self,locator, timeout=20):
+        WebDriverWait(self.driver, timeout).until(
             EC.visibility_of_element_located(locator))
          
     def verifyElementPresence(self,locator):

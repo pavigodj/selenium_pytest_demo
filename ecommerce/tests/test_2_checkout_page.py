@@ -2,7 +2,7 @@ import pytest
 from ecommerce.utilities.baseclass import BaseClass
 from selenium.webdriver.common.by import By
 import random
-from ecommerce.page_objects.checkout.checkoutPage import CheckOutPage, AddressSubPage
+from ecommerce.page_objects.checkout.checkout_page import CheckOutPage, AddressSubPage
 import logging
 logger = logging.getLogger(__name__)
 

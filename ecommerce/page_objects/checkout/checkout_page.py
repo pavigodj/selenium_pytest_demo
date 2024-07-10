@@ -1,4 +1,4 @@
-import ecommerce.page_objects.checkout.checkoutPagelocators as checkoutPagelocators
+import ecommerce.page_objects.checkout.checkout_page_locators as checkout_page_locators
 from selenium.webdriver.support import  expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.select import Select
@@ -8,10 +8,10 @@ from selenium.webdriver.common.by import By
 class CheckOutPage:
     def __init__(self, driver):
         self.driver = driver
-        self.checkout_options = checkoutPagelocators.CheckoutOptionsLocators()
-        self.delivery_method = checkoutPagelocators.DeliveryMethodLocators()
-        self.payment_method = checkoutPagelocators.PaymentMethodLocators()
-        self.confirm_order = checkoutPagelocators.ConfirmOrderLocators()
+        self.checkout_options = checkout_page_locators.CheckoutOptionsLocators()
+        self.delivery_method = checkout_page_locators.DeliveryMethodLocators()
+        self.payment_method = checkout_page_locators.PaymentMethodLocators()
+        self.confirm_order = checkout_page_locators.ConfirmOrderLocators()
 
     def confirm_order_txt(self):
         return self.driver.find_element(*self.confirm_order.confirm_order_locator)
@@ -74,9 +74,9 @@ class AddressSubPage:
     def __init__(self, driver, addr_type):
         self.driver = driver
         if addr_type == 'billing':
-            self.locators = checkoutPagelocators.BillingDetailsLocators()
+            self.locators = checkout_page_locators.BillingDetailsLocators()
         else:
-            self.locators = checkoutPagelocators.DeliveryDetailsLocators()
+            self.locators = checkout_page_locators.DeliveryDetailsLocators()
 
     @property
     def firstNameEntry(self):
