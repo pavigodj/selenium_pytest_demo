@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from ecommerce.page_objects.productPage import ProductPage
+from ecommerce.page_objects.product_category_page import ProductPage
 from ecommerce.page_objects.checkout.checkoutPage import CheckOutPage
 
 class HomePage:

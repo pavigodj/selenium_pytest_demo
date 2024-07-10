@@ -1,6 +1,6 @@
-from ecommerce.Utility.Baseclass import BaseClass
+from ecommerce.utilities.baseclass import BaseClass
 from selenium.webdriver.common.by import By
-from ecommerce.page_objects.homePage import HomePage
+from ecommerce.page_objects.home_page import HomePage
 import pytest
 import re
 import logging

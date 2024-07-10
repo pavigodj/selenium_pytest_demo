@@ -29,6 +29,9 @@ def driverSetUp(request):
         service = ChromeService(chromedriver_path)
         options_obj = webdriver.ChromeOptions()
         options_obj.add_argument("--ignore-certificate-errors")
+        options_obj.add_argument("chrome.switches")
+        options_obj.add_argument("--disable-extensions")
+        options_obj.add_argument("disable-infobars")
         driver = webdriver.Chrome(service=service, options=options_obj)
     if request.cls:  # Skip for testcase which is not a class
         request.cls.driver = driver

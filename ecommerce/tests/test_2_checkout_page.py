@@ -1,5 +1,5 @@
 import pytest
-from ecommerce.Utility.Baseclass import BaseClass
+from ecommerce.utilities.baseclass import BaseClass
 from selenium.webdriver.common.by import By
 import random
 from ecommerce.page_objects.checkout.checkoutPage import CheckOutPage, AddressSubPage
