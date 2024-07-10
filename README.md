@@ -9,16 +9,16 @@ Demo project to show case expertise in web UI selenium test automation using pyt
 http://opencart.abstracta.us/
 
 # Test scenario
-* verify actions, web elements, fill and validate forms in checkout page
-* e2e scenario comprising [ (repeat [ product search -> add cart ] ) --> check_cart --> check_checkout_page]
-* landing page elements validations
+* Landing Page validation
+* Check out Page Testing: verify actions, web elements, fill and validate forms in checkout page
+* Product Order Testing: e2e scenario comprising [ (repeat [ product search -> add cart ] ) --> check_cart --> check_checkout_page]  
 
 # Key functionalities
-* parameterization of test scenarios
-* dynamic code path for handling guest and returning users
+* Parameterization of test scenarios(various Products along with other attributes for placing order)
+* Dynamic code path for handling guest and returning users in checkout page
 * Fixtures and POM implementation with scale and growth
-* Explicit waits to make tests more consistent
-* args to switch between firefox and chrome
+* Explicit waits to make tests more consistent (Base class in utility)
+* args to switch between firefox and chrome (in CLI)
 
 # Directory Structure
 ```
