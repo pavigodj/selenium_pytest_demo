@@ -4,7 +4,7 @@
       quantity: 2
     - color: Blue
       name: Canon EOS 5D
-      quantity: 5
+      quantity: 15
     - name: Nikon D300
       quantity: 7
   phone:
@@ -18,4 +18,4 @@
 - camera:
     - color: Red
       name: Canon EOS 5D
-      quantity: 2
+      quantity: 12

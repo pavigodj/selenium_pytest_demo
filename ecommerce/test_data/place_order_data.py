@@ -1,15 +1,16 @@
 import yaml
-
+from pathlib import Path
 class PlaceOrderParamData:
     @classmethod
-    def fetch_order_data():
+    def fetch_order_data(self):
         try:
-            with open('order_data.yaml') as fp:
-                PlaceOrderParamData.order_data = yaml.load(fp)
+            with open(Path('/Users/bavi/selenium_pytest_demo/selenium_pytest_demo/ecommerce/test_data/order_data.yaml')) as fp:
+                PlaceOrderParamData.order_data = yaml.load(fp, Loader=yaml.FullLoader)
         except:
             PlaceOrderParamData.order_data
         return PlaceOrderParamData.order_data
 
+    # Default value for exception handling
     order_data = [
         {
             'camera': [

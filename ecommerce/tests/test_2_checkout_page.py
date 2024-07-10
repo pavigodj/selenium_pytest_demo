@@ -48,7 +48,7 @@ class CheckOutPage_Manager(BaseClass):
             self.checkOutPageObj.agree_terms().click()
             self.checkOutPageObj.continueClick(self.checkOutPageObj.payment_method.continue_bttn_locator).click()
         with subtests.test(msg='checkout step6'):
-            ''' '''
+            ''' To place the order '''
             self.verifyElementClickable(self.checkOutPageObj.confirm_order.confirm_bttn_locator)
             self.checkOutPageObj.continueClick(self.checkOutPageObj.confirm_order.confirm_bttn_locator).click()
         self.verifyElementPresence(self.checkOutPageObj.confirm_order.confirm_order_locator)

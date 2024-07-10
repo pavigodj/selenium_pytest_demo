@@ -23,7 +23,7 @@ def landingPageSetUp(request,driverSetUp):
     request.cls.prodDetailsObj = ProductDetails(driverSetUp)
     request.cls.shoppingCartObj = ShoppingCart(driverSetUp)
 
-@pytest.fixture(params=PlaceOrderParamData.order_data)
+@pytest.fixture(params=PlaceOrderParamData.fetch_order_data())
 def placeOrderData(request):
     ''' parameterize end to end test flow with order data'''
     return request.param
