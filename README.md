@@ -23,24 +23,27 @@ http://opencart.abstracta.us/
 # Directory Structure
 ```
 ├── ecommerce
-│   ├── Utility
-│   │   ├── Baseclass.py
 │   ├── conftest.py
 │   ├── page_objects
 │   │   ├── checkout
 │   │   │   ├── checkoutPage.py
 │   │   │   └── checkoutPagelocators.py
-│   │   ├── homePage.py
-│   │   ├── productDetailsPage.py
-│   │   ├── productPage.py
-│   │   └── shoppingCart.py
+│   │   ├── home_page.py
+│   │   ├── product_category_page.py
+│   │   ├── product_page.py
+│   │   └── shopping_cart_page.py
 │   ├── test_data
 │   │   ├── order_data.yaml
-│   │   └── placeOrderData.py
-│   └── tests
-│       ├── test_checkout_page.py
-│       ├── test_home_page.py
-│       └── test_place_order.py
+│   │   └── place_order_data.py
+│   ├── tests
+│   │   ├── test_1_home_page.py
+│   │   ├── test_2_checkout_page.py
+│   │   └── test_3_place_order.py
+│   └── utilities
+│       └── baseclass.py
+├── pytest.ini
+├── pytest_debug.log
+└── pytest_report.html
 ```
 
 # Result
