@@ -45,7 +45,13 @@ http://opencart.abstracta.us/
 
 # Result
 ```
+
 ecommerce/tests/test_3_place_order.py::Test_PlaceOrder::test_e2e_flow[placeOrderData0] [find_product_and_add_to_cart] SUBPASS
++----------------+------------------+-----------------+---------+
+| Product Name   |   Order Quantity |   Cart Quantity | Check   |
++================+==================+=================+=========+
+| Canon EOS 5D   |                1 |               1 | True    |
++----------------+------------------+-----------------+---------+
 ecommerce/tests/test_3_place_order.py::Test_PlaceOrder::test_e2e_flow[placeOrderData0] [verify_cart] SUBPASS
 ecommerce/tests/test_3_place_order.py::Test_PlaceOrder::test_e2e_flow[placeOrderData0] [checkout step1] SUBPASS
 ecommerce/tests/test_3_place_order.py::Test_PlaceOrder::test_e2e_flow[placeOrderData0] [checkout step2] SUBPASS
@@ -57,6 +63,19 @@ ecommerce/tests/test_3_place_order.py::Test_PlaceOrder::test_e2e_flow[placeOrder
 ecommerce/tests/test_3_place_order.py::Test_PlaceOrder::test_e2e_flow[placeOrderData0] [cart_checkout] SUBPASS
 ecommerce/tests/test_3_place_order.py::Test_PlaceOrder::test_e2e_flow[placeOrderData0] PASSED
 ecommerce/tests/test_3_place_order.py::Test_PlaceOrder::test_e2e_flow[placeOrderData1] [find_product_and_add_to_cart] SUBPASS
++-------------------------+------------------+-----------------+---------+
+| Product Name            |   Order Quantity |   Cart Quantity | Check   |
++=========================+==================+=================+=========+
+| Canon EOS 5D            |                7 |               7 | True    |
++-------------------------+------------------+-----------------+---------+
+| Nikon D300              |                7 |               7 | True    |
++-------------------------+------------------+-----------------+---------+
+| iPhone                  |                2 |               2 | True    |
++-------------------------+------------------+-----------------+---------+
+| HTC Touch HD            |                6 |               6 | True    |
++-------------------------+------------------+-----------------+---------+
+| Samsung Galaxy Tab 10.1 |                9 |               9 | True    |
++-------------------------+------------------+-----------------+---------+
 ecommerce/tests/test_3_place_order.py::Test_PlaceOrder::test_e2e_flow[placeOrderData1] [verify_cart] SUBPASS
 ecommerce/tests/test_3_place_order.py::Test_PlaceOrder::test_e2e_flow[placeOrderData1] [checkout step1] SUBPASS
 ecommerce/tests/test_3_place_order.py::Test_PlaceOrder::test_e2e_flow[placeOrderData1] [checkout step2] SUBPASS
