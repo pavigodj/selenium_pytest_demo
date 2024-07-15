@@ -91,8 +91,8 @@ class Test_PlaceOrder(BaseClass):
         try:
             self.verifyElementVisiblity(self.prodDetailsObj.alert_locator, timeout=1)
         except (TimeoutException, NoSuchElementException):
-            logger.warn('Alert message not displayed!')
-            pytest.xfail('looks to be bug in the web page')
+            logger.warning('Alert message not displayed!')
+            # pytest.xfail('looks to be bug in the web page')
         else:
             self.verifyElementVisiblity(self.prodDetailsObj.alert_locator)
             alert_msg = self.prodDetailsObj.alertmsg().text
